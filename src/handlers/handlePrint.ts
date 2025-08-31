@@ -22,6 +22,8 @@ export const handlePrint = async (ctx: BotContext) => {
     return;
   }
 
+  console.log(`user @${ctx.from.username} send print request`);
+
   await ctx.api.sendMessage(
     ADMIN_ID,
     `User: ${ctx.from?.username}\nwants to print ${filesToPrint.length} ${

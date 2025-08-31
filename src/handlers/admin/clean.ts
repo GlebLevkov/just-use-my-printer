@@ -19,6 +19,8 @@ export const clean = async (ctx: BotContext) => {
 
   if (!userId) return ctx.reply(`Id for Username=${username} not found`);
 
+  console.log(`user @${username} cleaned`);
+
   const toBeRemoved = await cleanUserFiles(userId);
   await removeFiles(toBeRemoved);
 

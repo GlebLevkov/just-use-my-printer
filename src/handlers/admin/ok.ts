@@ -5,8 +5,6 @@ import { addToPrintQueue } from "@src/printer/commands.ts";
 const usernameRegex = /User: (.+)/;
 
 export const ok = async (ctx: BotContext) => {
-  console.log("admin ok");
-
   if (
     !ctx.config.isAdmin ||
     !ctx.message?.reply_to_message?.text ||
@@ -20,6 +18,8 @@ export const ok = async (ctx: BotContext) => {
   const userId = await getIdByUsername(username);
 
   if (!userId) return ctx.reply(`Id for Username=${username} not found`);
+
+  console.log(`user @${username} approved`);
 
   const files = await getUserFiles(userId);
 

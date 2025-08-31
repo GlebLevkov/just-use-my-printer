@@ -5,6 +5,8 @@ import { removeFiles } from "@src/storage/utils.ts";
 export const handleClear = async (ctx: BotContext) => {
   if (!ctx.from?.id) return;
 
+  console.log(`user @${ctx.from.username} cleaned (itself)`);
+
   const toBeRemoved = await cleanUserFiles(ctx.from?.id);
   await removeFiles(toBeRemoved);
 
