@@ -5,6 +5,8 @@ import { addToPrintQueue } from "@src/printer/commands.ts";
 const usernameRegex = /User: (.+)/;
 
 export const ok = async (ctx: BotContext) => {
+  console.log("admin ok");
+
   if (
     !ctx.config.isAdmin ||
     !ctx.message?.reply_to_message?.text ||

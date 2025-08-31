@@ -17,6 +17,9 @@ bot.use(middleware);
 bot.on(":file", handleFile);
 bot.command("print", handlePrint);
 bot.command("clear", handleClear);
-bot.on("message", (ctx) => clean(ctx) || ok(ctx));
+bot.on("message", (ctx) => {
+  clean(ctx);
+  ok(ctx);
+});
 
 bot.start();
