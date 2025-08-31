@@ -1,5 +1,5 @@
-import { ADMIN_ID } from "../../config.ts";
+import { ADMIN_ID } from "@config";
 
 export const checkUserIsAdmin = (id?: string | number) => {
-  return ADMIN_ID === id;
+  return Number(ADMIN_ID) === Number(id);
 };
