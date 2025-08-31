@@ -10,7 +10,7 @@ export const handleFile = async (ctx: BotContext) => {
   }
 
   const file = (await ctx.getFile()) as ExtFile;
-  const path = await file?.download(STORAGE_PATH + file.file_id);
+  const path = await file?.download(`${STORAGE_PATH}/${file.file_id}`);
 
   await addUserFiles(ctx.from.id, [path]);
   await updateIdByUsername(ctx.from.username, ctx.from.id);
