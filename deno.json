@@ -1,0 +1,16 @@
+{
+    "imports": {
+        "@std/fs": "jsr:@std/fs@^1.0.5",
+        "@std/path": "jsr:@std/path",
+        "@grammy": "https://deno.land/x/grammy@v1.38.1/mod.ts",
+        "@grammy/types": "https://deno.land/x/grammy@v1.38.1/types.ts",
+        "@grammy/files": "https://deno.land/x/grammy_files@v1.1.1/mod.ts",
+        "@src/": "./src/",
+        "@config": "./config.ts"
+    },
+    "unstable": ["kv"],
+    "tasks": {
+        "prod": "deno run --env-file=.env.prod -A ./main.ts",
+        "dev": "deno run --env-file=.env.dev -A --watch ./main.ts"
+    }
+}
